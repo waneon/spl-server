@@ -1,7 +1,7 @@
 # spl-server
-socket-based node server template
+spl server application with docker. It is also designed for socket-based server template.
 
-## run
+## Run
 ```sh
 git clone https://github.com/waneon/spl-server
 cp .env-example .env
