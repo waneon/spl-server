@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "3000:${SERVER_PORT}"
+    working_dir: /usr/src/app
+    command: yarn start
+    links:
+      - mysql:mysql
+    env_file: ./.env
+    container_name: spl-server
+
+  mysql:
+    image: mysql:latest
+    volumes:
+      - "${DB_PATH}:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${DB_DATABASE}"
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+    container_name: spl-database
