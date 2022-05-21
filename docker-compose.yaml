@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   server:
+    restart: always
     build:
       context: ./server
       dockerfile: Dockerfile
@@ -17,7 +18,10 @@ services:
       - "${SRC_PATH}:/src"
 
   mysql:
+    restart: always
     image: mysql:latest
+    ports:
+      - "1235:3306"
     volumes:
       - "${DB_PATH}:/var/lib/mysql"
     environment:
