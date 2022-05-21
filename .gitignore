@@ -1,3 +1,4 @@
 .env
 mysql/
 server/node_modules/
+src/
