@@ -131,15 +131,14 @@ io.on('connection', (socket) => {
         const book = xlsx.utils.book_new();
         const sheet = xlsx.utils.aoa_to_sheet([
           [
-            '차량 이름',
-            '이름',
+            '사용자',
             '부서',
             '행선지 및 업무내용',
             '운행일자',
             '출발시간',
             '주행거리(km)',
-            '주유량(L)',
-            '충전량(만원)',
+            '주유(L)',
+            '하이패스 충전(만원)',
           ],
         ]);
 
