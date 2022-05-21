@@ -16,6 +16,9 @@ const sequelize = new Sequelize(
 // vehicle
 const vehicle = require('./vehicle.js')(sequelize);
 
+// vehicle-log
+const vehicleLog = require('./vehicle_log.js')(sequelize);
+
 // person
 const person = require('./person.js')(sequelize);
 
@@ -28,6 +31,7 @@ const watcher = require('./watcher.js')(sequelize);
 module.exports = {
   sequelize,
   vehicle,
+  vehicleLog,
   person,
   memo,
   watcher,

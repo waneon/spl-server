@@ -13,6 +13,8 @@ services:
       - mysql:mysql
     env_file: ./.env
     container_name: spl-server
+    volumes:
+      - "${SRC_PATH}:/src"
 
   mysql:
     image: mysql:latest

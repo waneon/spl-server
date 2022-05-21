@@ -2,12 +2,16 @@ const Sequelize = require('sequelize');
 
 module.exports = (sequelize) =>
   sequelize.define(
-    'person',
+    'vehicle-log',
     {
       key: {
         type: Sequelize.INTEGER,
         primaryKey: true,
+        allowNull: false,
         autoIncrement: true,
+      },
+      car_name: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
       which: {
@@ -16,7 +20,6 @@ module.exports = (sequelize) =>
       },
       name: {
         type: Sequelize.STRING,
-        allowNull: false,
       },
       dept: {
         type: Sequelize.STRING,
@@ -24,15 +27,24 @@ module.exports = (sequelize) =>
       note: {
         type: Sequelize.STRING,
       },
-      goto: {
-        type: Sequelize.STRING,
-      },
       date: {
         type: Sequelize.STRING,
       },
+      time: {
+        type: Sequelize.STRING,
+      },
+      distance: {
+        type: Sequelize.INTEGER,
+      },
+      oil: {
+        type: Sequelize.INTEGER,
+      },
+      hipass: {
+        type: Sequelize.INTEGER,
+      },
     },
     {
-      tableName: 'person',
+      tableName: 'vehicle-log',
       createdAt: false,
       updatedAt: false,
     },
