@@ -128,31 +128,32 @@ io.on('connection', (socket) => {
 
         xlsx.writeFile(book, LOG_FILE_PATH);
       }
-    }
-    // log
-    const book = xlsx.readFile(LOG_FILE_PATH);
-    const sheet =
-      data.detail.which == '/k/vehicle'
-        ? book.Sheets['경산 공장']
-        : book.Sheets['부산 공장'];
-    xlsx.utils.sheet_add_aoa(
-      sheet,
-      [
+
+      // log
+      const book = xlsx.readFile(LOG_FILE_PATH);
+      const sheet =
+        data.detail.which == '/k/vehicle'
+          ? book.Sheets['경산 공장']
+          : book.Sheets['부산 공장'];
+      xlsx.utils.sheet_add_aoa(
+        sheet,
         [
-          data.detail.car_name,
-          data.detail.name,
-          data.detail.dept,
-          data.detail.note,
-          data.detail.date,
-          data.detail.time,
-          data.detail.distance,
-          data.detail.oil,
-          data.detail.hipass,
+          [
+            data.detail.car_name,
+            data.detail.name,
+            data.detail.dept,
+            data.detail.note,
+            data.detail.date,
+            data.detail.time,
+            data.detail.distance,
+            data.detail.oil,
+            data.detail.hipass,
+          ],
         ],
-      ],
-      { origin: -1 },
-    );
-    xlsx.writeFile(book, LOG_FILE_PATH);
+        { origin: -1 },
+      );
+      xlsx.writeFile(book, LOG_FILE_PATH);
+    }
 
     try {
       if (model == null) {
