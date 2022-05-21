@@ -21,7 +21,7 @@ services:
     restart: always
     image: mysql:latest
     ports:
-      - "1235:3306"
+      - "${DB_PORT}:3306"
     volumes:
       - "${DB_PATH}:/var/lib/mysql"
     environment:
