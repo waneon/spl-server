@@ -63,12 +63,14 @@ io.on('connection', (socket) => {
         target: data.target,
         status: 'ok',
         value,
+        detail: data.detail,
       });
     } catch (e) {
       socket.emit('gets', {
         target: data.target,
         status: 'error',
         value: e,
+        detail: data.detail,
       });
     }
   });
@@ -90,12 +92,14 @@ io.on('connection', (socket) => {
         target: data.target,
         status: 'ok',
         value,
+        detail: data.detail,
       });
     } catch (e) {
       socket.emit('get', {
         target: data.target,
         status: 'error',
         value: e,
+        detail: data.detail,
       });
     }
   });
@@ -115,12 +119,14 @@ io.on('connection', (socket) => {
         target: data.target,
         status: 'ok',
         value,
+        detail: data.detail,
       });
     } catch (e) {
       socket.emit('add', {
         target: data.target,
         status: 'error',
         value: e,
+        detail: data.detail,
       });
     }
 
@@ -225,12 +231,14 @@ io.on('connection', (socket) => {
         target: data.target,
         status: 'ok',
         value,
+        detail: data.detail,
       });
     } catch (e) {
       socket.emit('delete', {
         target: data.target,
         status: 'error',
         value: e,
+        detail: data.detail,
       });
     }
   });
@@ -257,12 +265,14 @@ io.on('connection', (socket) => {
         target: data.target,
         status: 'ok',
         value,
+        detail: data.detail,
       });
     } catch (e) {
       socket.emit('update', {
         target: data.target,
         status: 'error',
         value: e,
+        detail: data.detail,
       });
     }
   });
