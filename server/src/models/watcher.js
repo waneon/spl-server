@@ -25,6 +25,10 @@ module.exports = (sequelize) =>
       note: {
         type: Sequelize.STRING,
       },
+      which: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
     },
     {
       tableName: 'watcher',
